@@ -1,10 +1,20 @@
 {
-  "name": "typescript",
+  "name": "typescript-fundamentals",
   "version": "1.0.0",
   "description": "typescript project",
-  "main": " ",
   "repository": " ",
   "author": "Philip Saa (@cowglow)",
   "license": "MIT",
-  "private": false
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ts-loader": "^6.1.0",
+    "typescript": "^3.6.3",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  }
 }
