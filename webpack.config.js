@@ -1,7 +1,9 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/app.ts",
+  entry: {
+    app: ["./src/app.ts"]
+  },
   mode: "development",
   module: {
     rules: [{ test: /\.ts$/, use: "ts-loader" }]
@@ -12,5 +14,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "app.js"
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, "public"),
+    compress: true,
+    hot: true,
+    port: 9000,
+    publicPath: "/"
   }
 };

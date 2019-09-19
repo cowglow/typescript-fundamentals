@@ -1,4 +1,6 @@
-function getRandomHash(symbol: string, length: number) {
+type ValidSymbol = "#" | "$";
+
+function getRandomHash(symbol: ValidSymbol, length: number) {
   return (
     symbol +
     Math.random()
