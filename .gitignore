@@ -2,5 +2,5 @@
 /.idea
 /node_modules
 /dist
-
+/public/script
 yarn.lock
