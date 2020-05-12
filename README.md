@@ -1,7 +1,9 @@
 # typescript-fundamentals
 
-Let's learn TypeScript!
 ![alt text](https://github.com/cowglow/typescript-fundamentals/raw/master/public/typescript.svg "Typescript Logo")
+
+Let's learn TypeScript!
+
 
 ### About me
 
