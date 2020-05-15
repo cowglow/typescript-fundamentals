@@ -1,37 +1,18 @@
 /**
- * typescript fundamentals
+ * Title: typescript-fundamentals
+ *
+ * Repository:
+ * Author: Philip Saa <@cowglow>
+ * License: MIT
  */
 
-import { ValidSymbol } from "./domain/types/valid-symbol";
+import { GetRandomHash } from "./application/get-random-hash";
 
-/**
- * Get Random Hash
- * @param symbol string
- * @param length number
- */
-function getRandomHash(symbol: ValidSymbol, length: number) {
-  return (
-    symbol +
-    Math.random()
-      .toString(36)
-      .slice(length)
-  );
-}
-
-/**
- * Scaffold target element
- */
 const targetElement = document.getElementById("app");
 
-/**
- * Main
- */
-function foo(): void {
-  if (targetElement) {
-    setInterval(() => {
-      targetElement.innerText = getRandomHash("$", 7);
-    }, 1000);
-  }
+if (targetElement) {
+  const randomHash = GetRandomHash("$", 7);
+  setInterval(() => {
+    targetElement.innerText = randomHash;
+  }, 1000);
 }
-
-foo();
