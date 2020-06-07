@@ -6,19 +6,11 @@ import { ValidSymbol } from "../domain/types/valid-symbol";
 
 /**
  * Get Random Hash
- * @param GetRandomHashProps
+ * @param value ValidSymbol
+ * @param length number
  * @constructor
  */
-
-export interface GetRandomHashProps {
-  symbol: ValidSymbol;
-  length: number;
-}
-
-export const GetRandomHash = <GetRandomHashProps>({
-  symbol: string,
-  length: number
-}) => {
+export const GetRandomHash = (value: ValidSymbol, length: number) => {
   const random = Math.random().toString(36);
-  return symbol + random.slice(length);
+  return value + random.slice(length).toString();
 };

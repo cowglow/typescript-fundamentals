@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "start": "webpack && webpack-dev-server",
+    "build": "webpack",
     "serve": "php -S localhost:9000 -t public"
   },
   "dependencies": {},
