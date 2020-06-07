@@ -18,6 +18,7 @@
     "typescript": "^3.9.5",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.8.1"
+    "webpack-dev-server": "^3.8.1",
+    "websocket-extensions": "^0.1.4"
   }
 }
