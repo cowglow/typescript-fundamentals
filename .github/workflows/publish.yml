@@ -20,4 +20,4 @@ jobs:
       env:
         EMAIL: cowglow@gmail.com
         GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BUILD_DIR: public/
+        BUILD_DIR: public
