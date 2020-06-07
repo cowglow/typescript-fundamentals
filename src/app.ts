@@ -11,9 +11,7 @@ import { GetRandomHash } from "./application/get-random-hash";
 const targetElement = document.getElementById("app");
 
 if (targetElement) {
-  const output = GetRandomHash("#", 7);
-
-  targetElement.innerText = output;
+  targetElement.innerText = GetRandomHash("#", 7);;
 
   setInterval(() => {
     targetElement.innerText = GetRandomHash("$", 7);
