@@ -1,3 +1,5 @@
+![GitHub Pages deploy](https://github.com/cowglow/typescript-fundamentals/workflows/GitHub%20Pages%20deploy/badge.svg?branch=master)
+
 # typescript-fundamentals
 
 ![alt text](https://github.com/cowglow/typescript-fundamentals/raw/master/public/typescript.svg "Typescript Logo")
