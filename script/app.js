@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n/**\n * Title: typescript-fundamentals\n *\n * Repository:\n * Author: Philip Saa <@cowglow>\n * License: MIT\n */\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst get_random_hash_1 = __webpack_require__(/*! ./application/get-random-hash */ \"./src/application/get-random-hash.ts\");\nconst targetElement = document.getElementById(\"app\");\nif (targetElement) {\n    targetElement.innerText = get_random_hash_1.GetRandomHash(\"#\", 7);\n    ;\n    setInterval(() => {\n        targetElement.innerText = get_random_hash_1.GetRandomHash(\"$\", 7);\n    }, 1000);\n}\n\n\n//# sourceURL=webpack:///./src/app.ts?");
+eval("\n/**\n * Title: typescript-fundamentals\n *\n * Repository:\n * Author: Philip Saa <@cowglow>\n * License: MIT\n */\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst get_random_hash_1 = __webpack_require__(/*! ./application/get-random-hash */ \"./src/application/get-random-hash.ts\");\nconst symbolCollection = [\"#\", \"$\"];\nconst length = 7;\nconst hashSymbol = (symbolMap) => {\n    return symbolMap[Date.now() % 2];\n};\n/** Display it */\nconst targetElement = document.getElementById(\"app\");\nif (targetElement) {\n    targetElement.innerText = get_random_hash_1.GetRandomHash(\"#\", length);\n    setInterval(() => {\n        targetElement.innerText = get_random_hash_1.GetRandomHash(hashSymbol(symbolCollection), length);\n    }, 1000);\n}\n\n\n//# sourceURL=webpack:///./src/app.ts?");
 
 /***/ }),
 
