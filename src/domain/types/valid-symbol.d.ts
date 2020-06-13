@@ -1,1 +1,1 @@
-export type ValidSymbol = "#" | "$";
+export type ValidSymbolPrototype = "#" | "$";
