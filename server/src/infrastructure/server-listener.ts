@@ -1,22 +1,20 @@
 export interface ServerListenerInput {
-  mode?: "http" | "https";
-  uri?: string;
   port: number;
   paths: ["/", "/api"];
+  mode?: "http" | "https";
+  uri?: string;
 }
 
 export const serverListener = ({
-  mode = "http",
-  uri = "localhost",
   port,
-  paths
+  paths,
+  mode = "http",
+  uri = "localhost"
 }: ServerListenerInput) => {
   const message = "server listening at ";
   const url = mode + "://" + uri + ":" + port;
 
   paths.forEach(path => {
-    console.log(message + " " + url + path);
+    return console.log(message + " " + url + path);
   });
-
-  // return Object.freeze({ message, url });
 };
