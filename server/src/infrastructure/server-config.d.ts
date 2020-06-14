@@ -3,4 +3,5 @@ export interface iServerConfig {
   port: number;
   index: string;
   default_message: string;
+  path: string;
 }

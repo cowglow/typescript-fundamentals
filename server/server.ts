@@ -1,44 +1,34 @@
 import { iServerConfig } from "./src/infrastructure/server-config.js";
-
+import * as path from "path";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import { serverListener } from "./src/infrastructure/server-listener";
-import { WebApp } from "./src/port/output/web-app";
+import WebApp from "./src/port/output/web-app";
+import Debugger from "./src/port/output/debug";
 
-async function startServer() {
+const startServer = (serverConfig: iServerConfig) => {
   try {
-    const serverConfig: iServerConfig = {
-      webapp: "../../../../../public",
-      port: 3000,
-      index: "/api",
-      default_message: "Typescript Fundamentals Server"
-    };
-
+    /**
+     * Boilerplate
+     */
     const app: express.Application = express();
     app.use(bodyParser.json());
     app.use(cors());
 
+    /**
+     * Routes
+     */
     app.use(
       "/",
-      (
-        req: express.Request,
-        res: express.Response,
-        next: express.NextFunction
-      ) => {
-        res.json({ message: serverConfig.default_message });
-      }
+      WebApp({ path: serverConfig.path + "/" + serverConfig.webapp })
     );
 
-    app.use(
-      "/web-app",
-      WebApp({
-        path: serverConfig.webapp
-      })
-    );
+    app.use("/debug", Debugger(serverConfig));
 
-    // app.use("/api", Api());
-
+    /**
+     * Listen
+     */
     app.listen(serverConfig.port, () =>
       serverListener({
         port: 3000,
@@ -48,6 +38,12 @@ async function startServer() {
   } catch (e) {
     throw new Error("--= Failed to initialize =--");
   }
-}
+};
 
-startServer();
+startServer({
+  path: path.resolve(__dirname),
+  webapp: "../public",
+  port: 3000,
+  index: "/api",
+  default_message: "Typescript Fundamentals Server"
+});
