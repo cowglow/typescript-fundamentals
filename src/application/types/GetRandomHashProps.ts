@@ -1,4 +1,4 @@
-import { ValidSymbol } from "../../domain/types/valid-symbol";
+import { ValidSymbol } from "../../domain/application";
 
 export interface GetRandomHashProps {
   symbol: ValidSymbol;

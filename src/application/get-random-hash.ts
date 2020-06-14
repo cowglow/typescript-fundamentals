@@ -2,7 +2,7 @@
  * typescript fundamentals
  */
 
-import { ValidSymbol } from "../domain/types/valid-symbol";
+import { ValidSymbol } from "../domain/application";
 
 /**
  * Get Random Hash

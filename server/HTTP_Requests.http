@@ -1,0 +1,14 @@
+GET http://{{uri}}:3000/debug
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-06-14T040612.200.json
+
+###
+POST /api HTTP/1.1
+Host: http://{{uri}}:3000/
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 27
+
+field1=value1&field2=value2
+###

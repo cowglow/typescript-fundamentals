@@ -4,3 +4,5 @@
 /dist
 /public/script
 yarn.lock
+/server/node_modules/
+server/http-client.private.env.json
