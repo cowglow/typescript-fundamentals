@@ -6,6 +6,7 @@ import cors from "cors";
 import { serverListener } from "./src/infrastructure/server-listener";
 import WebApp from "./src/port/output/web-app";
 import Debugger from "./src/port/output/debug";
+import Api from "./src/port/input/api";
 
 const startServer = (serverConfig: iServerConfig) => {
   try {
@@ -23,8 +24,8 @@ const startServer = (serverConfig: iServerConfig) => {
       "/",
       WebApp({ path: serverConfig.path + "/" + serverConfig.webapp })
     );
-
     app.use("/debug", Debugger(serverConfig));
+    app.use("/api", Api(serverConfig));
 
     /**
      * Listen

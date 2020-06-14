@@ -3,7 +3,7 @@ import { iServerConfig } from "../../infrastructure/server-config";
 
 type DebuggerOptions = iServerConfig;
 
-const Debugger = (options: DebuggerOptions): express.Router => {
+const DebuggerBuilder = (options: DebuggerOptions): express.Router => {
   const router: express.Router = express.Router();
 
   router.use(
@@ -19,5 +19,7 @@ const Debugger = (options: DebuggerOptions): express.Router => {
 
   return router;
 };
+
+const Debugger = (options: DebuggerOptions) => DebuggerBuilder(options);
 
 export default Debugger;
